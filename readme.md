@@ -98,3 +98,26 @@ CMD ["npm", "start"]
 - delete image ⇒ docker rmi imageName
 
 ### What Is we update project
+
+⇒ existing project any features change like testing, add a new test case. that time how do you update the existing docker image?
+
+- first create a docker image ⇒ docker build -t mywebApp:02 .
+- start container ⇒ docker run -d —rm —name “mywebapp” -p 3001:3000 myWebapp02
+
+### Pre-Defined Docker Image
+
+⇒ use build-in the docker image. docker provides lots of images.
+
+- build in docker image use ⇒ docker pull image
+- run the docker build in image ⇒ docker run imageName:latest
+- rename docker image ⇒ docker tag currentImageName newName
+
+### Sharing Docker Image
+
+- go to the docker hub or create a repository
+- push the docker image into the docker hub
+  - docker login in your vs code
+  - create docker image. must be the image or repo name the same.
+  - push docker ⇒ docker push imageName
+
+### Using Our Image Remotely Pull Images
