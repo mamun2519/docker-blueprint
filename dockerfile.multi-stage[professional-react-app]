@@ -1,0 +1,38 @@
+# STAGE 1: Build & Dependencies
+FROM node:20-alpine AS builder
+
+# Set working directory
+WORKDIR /app
+
+# copy package.json and package-lock.json
+COPY package*.json ./
+
+# Install project dependencies. Using 'npm ci' ensures a clean, repeatable install
+RUN npm ci --only=production
+
+# Copy the rest of the application code
+COPY . .
+
+# # Build the application
+# RUN npm run build
+
+# STAGE 2: Runtime Environment
+FROM node:20-alpine AS runtime
+# Set working directory
+WORKDIR /app
+
+# Copy only the production dependencies from the builder stage
+# This dramatically reduces the final image size by excluding development dependencies
+COPY --from=builder /app/node_modules ./node_modules
+
+# Copy only the necessary files from the builder stage
+COPY --from=builder /app ./
+
+# Security best practice: Switch to a non-root user (Node.js official images include 'node')
+USER node
+
+# Expose the port the app runs on
+EXPOSE 3000
+
+# Start the application
+CMD ["npm", "start"]
