@@ -39,3 +39,31 @@
 - Docker Image
 - Docker Container
 - Docker Registry
+
+### Flow Of docker
+
+![Screenshot from 2024-10-13 20-42-42.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/ef9c962e-3b4b-4ceb-adf7-9db20221cb08/1d146074-42b6-4718-943a-f79b41430bd4/Screenshot_from_2024-10-13_20-42-42.png)
+
+### What is a Docker file
+
+⇒ It is a simple text file with instructions to build an image.
+
+### Docker Registry
+
+⇒ A docker registry is a central repository for storing and distributing docker images.
+
+### Create the First Docker File
+
+```jsx
+// Set Version
+FROM node:20
+
+// set warking direcotry
+WORKDIR /myapp
+//current directory theke copy kore working directory te pest koro
+COPY ..
+
+// Install all depandancy
+RUN npm install
+
+```
