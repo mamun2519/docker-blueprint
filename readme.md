@@ -105,11 +105,3 @@ CMD ["npm", "start"]
 - start container ⇒ docker run -d —rm —name “mywebapp” -p 3001:3000 myWebapp02
 
 ### Pre-Defined Docker Image
-
-⇒ use build-in the docker image. docker provides lots of images.
-
-- build in docker image use ⇒ docker pull image
-- run the docker build in image ⇒ docker run imageName:latest
-- rename docker image ⇒ docker tag currentImageName newName
-
-### Sharing Docker Image
