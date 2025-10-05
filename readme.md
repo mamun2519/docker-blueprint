@@ -76,10 +76,3 @@ CMD ["npm", "start"]
 
 - command ⇒ docker build .
 - check docker image list ⇒ docker image ls
-
-### Create a container
-
-- docker run -p 3000:3000 docker image
-- stop docker ⇒ docker stop docker name
-
-### Container Management
