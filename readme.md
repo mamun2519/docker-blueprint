@@ -169,6 +169,3 @@ A Docker volume is **an independent file system entirely managed by Docker and 
 - all command check ⇒ docker network —help
 - create network ⇒ docker network create networkName
 - check network ⇒ docker network ls
-- include network with docker image ⇒ docker run —rm —network networkName imageId
-
-### Docker Compose
