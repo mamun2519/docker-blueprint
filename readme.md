@@ -135,3 +135,31 @@ A Docker volume is **an independent file system entirely managed by Docker and 
 - check volume details ⇒ docker volume inspect myvolume
 
 ### What Are Bind Mounts
+
+⇒ Bind mounts have been around since the early days of Docker. Bind mounts have limited functionality compared to [volumes](https://docs.docker.com/engine/storage/volumes/). When you use a bind mount, a file or directory on the host machine is mounted into a container. The file or directory is referenced by its absolute path on the host machine. By contrast, when you use a volume, a new directory is created within Docker's storage directory on the host machine, and Docker manages that directory's contents.
+
+- create bind mount ⇒ docker run -v filePath:/my/servces.txt —rm imageName
+
+### What is? .dockerignore
+
+⇒ its kind of gitignore
+
+### Communication From/To Containers
+
+- Working With APis
+  ```jsx
+  FROM python
+  WORKDIR /myApp
+  copy . .
+  //* this point r install when you need external package
+  RUn pip install request
+  CMD ["ython", "api_demo.py"]
+  ```
+- Commmunication Containner & local DB
+- Communication Between containners
+
+  ```jsx
+
+  ```
+
+### Creating Docker Network
