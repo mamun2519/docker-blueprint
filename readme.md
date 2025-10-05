@@ -66,13 +66,4 @@ COPY ..
 // Install all depandancy
 RUN npm install
 
-//set port
-EXPORSE 300
-//* run app
-CMD ["npm", "start"]
 ```
-
-### Create a docker image
-
-- command ⇒ docker build .
-- check docker image list ⇒ docker image ls
