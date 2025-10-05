@@ -155,11 +155,3 @@ A Docker volume is **an independent file system entirely managed by Docker and 
   RUn pip install request
   CMD ["ython", "api_demo.py"]
   ```
-- Commmunication Containner & local DB
-- Communication Between containners
-
-  ```jsx
-
-  ```
-
-### Creating Docker Network
