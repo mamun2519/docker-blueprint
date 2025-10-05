@@ -157,6 +157,7 @@ A Docker volume is **an independent file system entirely managed by Docker and 
   ```
 - Commmunication Containner & local DB
 - Communication Between containners
+
   ```jsx
 
   ```
@@ -185,7 +186,4 @@ services:
 		enveirment:
 			- mySQL="root"
 			- pass = "userInf"
-		containner_name: "mysqldb"
 ```
-
-- under docker-compose ⇒ run docker compose up
