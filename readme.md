@@ -121,9 +121,3 @@ CMD ["npm", "start"]
   - push docker ⇒ docker push imageName
 
 ### Using Our Image Remotely Pull Images
-
-⇒ first must be set up docker. then go docker hub and pull the image.
-
-⇒ then run the image
-
-### Understand Docker Volumes
