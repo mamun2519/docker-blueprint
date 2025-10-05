@@ -172,9 +172,3 @@ A Docker volume is **an independent file system entirely managed by Docker and 
 - include network with docker image ⇒ docker run —rm —network networkName imageId
 
 ### Docker Compose
-
-⇒ configuration file to manage multiple containers running on the same machine.its kind of yml file
-
-⇒ always docker command very large that prove solve docker compose. its provide simple command
-
-- file create ⇒ file.yml
