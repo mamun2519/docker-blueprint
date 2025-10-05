@@ -15,7 +15,7 @@
 - it can be easily shared.
 - Makes deployment and development efficient,
 
-### Docker Architacture
+### Docker Architecture
 
 ![Screenshot from 2024-10-13 20-33-17.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/ef9c962e-3b4b-4ceb-adf7-9db20221cb08/5b421e1e-3dd3-4ab6-a59e-3b6fa60f99fb/Screenshot_from_2024-10-13_20-33-17.png)
 
@@ -157,6 +157,7 @@ A Docker volume is **an independent file system entirely managed by Docker and 
   ```
 - Commmunication Containner & local DB
 - Communication Between containners
+
   ```jsx
 
   ```
