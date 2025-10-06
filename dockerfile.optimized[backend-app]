@@ -39,8 +39,3 @@ WORKDIR /app
 # Copy only the production dependencies from the builder stage
 COPY --from=base /app/node_modules ./node_modules
 
-# Copy only the necessary files from the builder stage
-COPY --from=base /app ./
-
-# Security best practice: Switch to a non-root user
-
