@@ -24,3 +24,13 @@ COPY . .
 
 # Runtime environment
 FROM node:20-alpine AS runtime
+
+# Install only runtime dependencies for canvas
+RUN apk add --no-cache \
+      cairo \
+      jpeg \
+      pango \
+      giflib \
+      pixman
+
+# set working directory
