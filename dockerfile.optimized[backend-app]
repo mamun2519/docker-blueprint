@@ -1,0 +1,53 @@
+# Base Image
+FROM node:20-alpine AS base
+
+## Set working directory
+WORKDIR /app
+
+## Install build dependencies required for canvas
+RUN apk add --no-cache \
+      python3 \
+      make \
+      g++ \
+      cairo-dev \
+      jpeg-dev \
+      pango-dev \
+      giflib-dev \
+      pixman-dev
+
+## Install dependencies
+COPY package*.json ./
+RUN npm install
+
+# copy all files
+COPY . .
+
+# Runtime environment
+FROM node:20-alpine AS runtime
+
+# Install only runtime dependencies for canvas
+RUN apk add --no-cache \
+      cairo \
+      jpeg \
+      pango \
+      giflib \
+      pixman
+
+# set working directory
+WORKDIR /app
+
+# Copy only the production dependencies from the builder stage
+COPY --from=base /app/node_modules ./node_modules
+
+# Copy only the necessary files from the builder stage
+COPY --from=base /app ./
+
+# Security best practice: Switch to a non-root user
+RUN adduser -D backendUser
+USER backendUser
+
+# Expose the port the app runs on
+EXPOSE 3002
+
+# Start the application
+CMD ["npm", "start"]
