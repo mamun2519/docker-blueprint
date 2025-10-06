@@ -53,3 +53,9 @@ ENV NODE_ENV=production
 
 # Start the application
 CMD ["npm", "start"]
+
+
+# // If need to use bind mount for development, uncomment below
+# # Use a volume to persist node_modules
+VOLUME [ "/app/node_modules" ]
+# docker run --mount type=bind,src=/mnt/sda1/client-project/SensTailor/ai-calculator-backend-app,dst=/app --name tailor-backend-v2 -d -p 3002:3002 senstailor-backend:v1 
