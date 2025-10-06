@@ -48,6 +48,8 @@ USER backendUser
 
 # Expose the port the app runs on
 EXPOSE 3002
+# 5️⃣ Set environment (optional)
+ENV NODE_ENV=production
 
 # Start the application
 CMD ["npm", "start"]
