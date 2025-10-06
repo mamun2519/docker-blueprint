@@ -41,3 +41,12 @@ EXPOSE 3002
 
 # Default command (production)
 CMD ["sh", "-c", "if [ \"$NODE_ENV\" = 'development' ]; then npm run dev; else npm start; fi"]
+
+
+
+# // If need to use bind mount for development, uncomment below (run this)
+# docker run --mount type=bind,src=/mnt/sda1/client-project/SensTailor/ai-calculator-backend-app,target=/app \
+#   -p 3003:3002 -e NODE_ENV=development senstailor-backend:v1
+
+# no need bind moun for production run this
+#docker run -p 3003:3002 -e NODE_ENV=production senstailor-backend:v1
