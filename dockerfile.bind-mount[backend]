@@ -1,0 +1,43 @@
+
+
+# ===============================
+# 1️⃣ Base Stage — Dependencies Install
+# ===============================
+FROM node:20-slim AS base
+
+# Set working directory inside container
+WORKDIR /app
+
+# Copy only package files first (for better caching)
+COPY package*.json ./
+
+# Install all dependencies (you can use npm ci if package-lock.json exists)
+RUN npm install --production
+
+# Copy all project files
+COPY . .
+
+# ===============================
+# 2️⃣ Runtime Stage — Final Lightweight Image
+# ===============================
+FROM node:20-slim AS runtime
+
+# Create a non-root user for security
+RUN useradd -m backenduser
+
+# Set working directory
+WORKDIR /app
+
+# Copy only necessary things from base image
+COPY --from=base /app /app
+
+# Switch to non-root user
+USER backenduser
+
+# Expose your app port
+EXPOSE 3002
+
+# Start the app
+
+# Default command (production)
+CMD ["sh", "-c", "if [ \"$NODE_ENV\" = 'development' ]; then npm run dev; else npm start; fi"]
