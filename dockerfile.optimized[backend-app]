@@ -34,8 +34,3 @@ RUN apk add --no-cache \
       pixman
 
 # set working directory
-WORKDIR /app
-
-# Copy only the production dependencies from the builder stage
-COPY --from=base /app/node_modules ./node_modules
-
