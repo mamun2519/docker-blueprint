@@ -43,9 +43,4 @@ COPY --from=base /app/node_modules ./node_modules
 COPY --from=base /app ./
 
 # Security best practice: Switch to a non-root user
-RUN adduser -D backendUser
-USER backendUser
-
-# Expose the port the app runs on
-EXPOSE 3002
 
