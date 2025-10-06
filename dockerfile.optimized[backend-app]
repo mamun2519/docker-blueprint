@@ -1,0 +1,20 @@
+# Base Image
+FROM node:20-alpine AS base
+
+## Set working directory
+WORKDIR /app
+
+## Install build dependencies required for canvas
+RUN apk add --no-cache \
+      python3 \
+      make \
+      g++ \
+      cairo-dev \
+      jpeg-dev \
+      pango-dev \
+      giflib-dev \
+      pixman-dev
+
+## Install dependencies
+COPY package*.json ./
+RUN npm install
