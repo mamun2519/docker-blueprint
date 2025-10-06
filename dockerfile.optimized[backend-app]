@@ -18,3 +18,9 @@ RUN apk add --no-cache \
 ## Install dependencies
 COPY package*.json ./
 RUN npm install
+
+# copy all files
+COPY . .
+
+# Runtime environment
+FROM node:20-alpine AS runtime
