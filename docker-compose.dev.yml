@@ -44,7 +44,9 @@ volumes:
   db_data: {}
 
 networks:
-
+  sens-network:
+    driver: bridge
+    
 
 
   
