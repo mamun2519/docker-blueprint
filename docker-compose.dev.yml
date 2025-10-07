@@ -25,9 +25,3 @@ services:
     image: "sens-ai-calculator-frontend"
     container_name: "sens-ai-calculator-frontend"
     build: 
-      context: ./frontend
-      dockerfile: dockerfile
-    ports:
-      - "${FRONTEND_PORT}:3000"
-  
-  
