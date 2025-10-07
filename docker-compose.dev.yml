@@ -16,9 +16,3 @@ services:
     user: root
     command: sh -c "npm install && npm run dev"
     volumes:
-      - ./ai-calculator-backend-app:/app
-      - /app/node_modules
-    networks:
-      - sens-network
-
-  frontend:
