@@ -1,0 +1,8 @@
+version: '1.0'
+services:
+  backend:
+    image: "sens-ai-calculator-backend"
+    container_name: "sens-ai-calculator-backend"
+    build: 
+      context: ./ai-calculator-backend-app
+      dockerfile: dockerfile
