@@ -29,5 +29,13 @@ services:
       dockerfile: dockerfile
     ports:
       - "${FRONTEND_PORT}:3000"
-  
+    environment:
+      - NODE_ENV=development
+      - REACT_APP_API_URL=http://localhost:${BACKEND_PORT}
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    command: npm start
+
+
   
