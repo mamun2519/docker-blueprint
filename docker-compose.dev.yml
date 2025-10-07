@@ -22,6 +22,3 @@ services:
       - sens-network
 
   frontend:
-    image: "sens-ai-calculator-frontend"
-    container_name: "sens-ai-calculator-frontend"
-    build: 
