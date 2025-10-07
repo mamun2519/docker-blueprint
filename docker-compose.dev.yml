@@ -6,3 +6,19 @@ services:
     build: 
       context: ./ai-calculator-backend-app
       dockerfile: dockerfile
+    ports:
+      - "${BACKEND_PORT}:3002"
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=development
+      - PORT=${BACKEND_PORT}
+    user: root
+    command: sh -c "npm install && npm run dev"
+    volumes:
+      - ./ai-calculator-backend-app:/app
+      - /app/node_modules
+    networks:
+      - sens-network
+
+  frontend:
