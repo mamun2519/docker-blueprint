@@ -6,9 +6,3 @@ services:
     build: 
       context: ./ai-calculator-backend-app
       dockerfile: dockerfile
-    ports:
-      - "${BACKEND_PORT}:3002"
-    env_file:
-      - .env
-    environment:
-      - NODE_ENV=development
